@@ -5,7 +5,7 @@ Class {
 		'type',
 		'bytes',
 		'objects',
-		'stack'
+		'frames'
 	],
 	#category : #LeakReporter
 }
@@ -18,6 +18,16 @@ LeReLeak >> bytes [
 { #category : #accessing }
 LeReLeak >> bytes: anObject [
 	bytes := anObject
+]
+
+{ #category : #accessing }
+LeReLeak >> frames [
+	^ frames
+]
+
+{ #category : #accessing }
+LeReLeak >> frames: anObject [
+	frames := anObject
 ]
 
 { #category : #accessing }
@@ -34,21 +44,11 @@ LeReLeak >> objects: anObject [
 LeReLeak >> printOn: aStream [
 	aStream << type << ' leak of ' << bytes asString << ' bytes in '
 		<< objects asString << ' objects' << String lf.
-	stack
+	frames
 		do: [ :e | 
 			aStream << '  '.
 			e printOn: aStream.
 			aStream << String lf ]
-]
-
-{ #category : #accessing }
-LeReLeak >> stack [
-	^ stack
-]
-
-{ #category : #accessing }
-LeReLeak >> stack: anObject [
-	stack := anObject
 ]
 
 { #category : #accessing }

@@ -1,6 +1,6 @@
 Class {
-	#name : #LeReKnownMethod,
-	#superclass : #LeReMethod,
+	#name : #LeReKnownFrame,
+	#superclass : #LeReFrame,
 	#instVars : [
 		'signature',
 		'location'
@@ -9,27 +9,27 @@ Class {
 }
 
 { #category : #accessing }
-LeReKnownMethod >> location [
+LeReKnownFrame >> location [
 	^ location
 ]
 
 { #category : #accessing }
-LeReKnownMethod >> location: anObject [
+LeReKnownFrame >> location: anObject [
 	location := anObject
 ]
 
 { #category : #printing }
-LeReKnownMethod >> printOn: aStream [
+LeReKnownFrame >> printOn: aStream [
 	aStream << 'at ' << signature << ' in '.
 	location printOn: aStream
 ]
 
 { #category : #accessing }
-LeReKnownMethod >> signature [
+LeReKnownFrame >> signature [
 	^ signature
 ]
 
 { #category : #accessing }
-LeReKnownMethod >> signature: anObject [
+LeReKnownFrame >> signature: anObject [
 	signature := anObject
 ]

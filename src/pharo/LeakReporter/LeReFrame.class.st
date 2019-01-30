@@ -1,5 +1,5 @@
 Class {
-	#name : #LeReMethod,
+	#name : #LeReFrame,
 	#superclass : #Object,
 	#category : #LeakReporter
 }
