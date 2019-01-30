@@ -8,6 +8,18 @@ Class {
 	#category : #LeakReporter
 }
 
+{ #category : #comparing }
+LeReKnownFrame >> = anObject [
+	^ anObject class = self class
+		and:
+			[ signature = anObject signature and: [ location = anObject location ] ]
+]
+
+{ #category : #comparing }
+LeReKnownFrame >> hash [
+	^ signature hash bitXor: location hash
+]
+
 { #category : #accessing }
 LeReKnownFrame >> location [
 	^ location

@@ -3,3 +3,8 @@ Class {
 	#superclass : #Object,
 	#category : #LeakReporter
 }
+
+{ #category : #accessing }
+LeReFrame >> location [
+	^ self subclassResponsibility
+]

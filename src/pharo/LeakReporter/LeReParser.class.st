@@ -9,7 +9,7 @@ LeReParser >> frame: aStream [
 	| words location |
 	words := self words: aStream nextLine trimBoth.
 	location := words removeLast.
-	location = '(<unknown module>)'
+	location = 'module>)'
 		ifTrue: [ ^ LeReUnknownFrame new ].
 	words
 		removeFirst;

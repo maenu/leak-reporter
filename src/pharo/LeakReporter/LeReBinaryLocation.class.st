@@ -8,6 +8,13 @@ Class {
 	#category : #LeakReporter
 }
 
+{ #category : #comparing }
+LeReBinaryLocation >> = anObject [
+	^ anObject class = self class
+		and:
+			[ module = anObject module and: [ address = anObject address ] ]
+]
+
 { #category : #accessing }
 LeReBinaryLocation >> address [
 	^ address
@@ -16,6 +23,16 @@ LeReBinaryLocation >> address [
 { #category : #accessing }
 LeReBinaryLocation >> address: anObject [
 	address := anObject
+]
+
+{ #category : #'as yet unclassified' }
+LeReBinaryLocation >> component [
+	^ module
+]
+
+{ #category : #comparing }
+LeReBinaryLocation >> hash [
+	^ module hash bitXor: address hash
 ]
 
 { #category : #accessing }
